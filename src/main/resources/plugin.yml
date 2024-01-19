@@ -1,0 +1,13 @@
+name: HexPalette
+main: com.goyanov.hexpalette.main.HexPalettePlugin
+version: 1.0.0
+api-version: 1.13
+commands:
+  palette:
+    description: Show the hex palette
+    permission: HexPalette.show
+    permission-message: "You can't do it!"
+    aliases:
+      - pal
+      - hex
+      - hx
