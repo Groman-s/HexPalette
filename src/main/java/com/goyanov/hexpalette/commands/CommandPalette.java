@@ -48,8 +48,9 @@ public class CommandPalette implements CommandExecutor
                     }
                 }
             }
+            p.spigot().sendMessage(message);
+            message = new TextComponent("  ");
         }
-        p.spigot().sendMessage(message);
 
         return true;
     }
