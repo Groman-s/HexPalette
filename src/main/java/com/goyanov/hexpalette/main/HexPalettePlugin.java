@@ -1,6 +1,7 @@
 package com.goyanov.hexpalette.main;
 
 import com.goyanov.hexpalette.commands.CommandPalette;
+import com.goyanov.hexpalette.utils.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class HexPalettePlugin extends JavaPlugin
@@ -14,5 +15,7 @@ public class HexPalettePlugin extends JavaPlugin
         instance = this;
 
         getCommand("palette").setExecutor(new CommandPalette());
+
+        new Metrics(this, 20789);
     }
 }
