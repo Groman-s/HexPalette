@@ -1,0 +1,12 @@
+# Use %hex% for a current hovered color. This option supports standard color codes only (&c, &6, etc)
+on-hover-text: "&aClick to copy"
+
+# A color which will be displayed in the palette
+color-symbol: "&l|"
+
+# Actions:
+# - COPY_TO_CLIPBOARD - a color hex-code will be copied to the player's clipboard (can be pasted with Ctrl+V)
+# - PASTE_IN_CHAT - a color hex-code will be pasted in the player's chat (BUT IT CANNOT KEEP A CURRENT CHAT CONTENT,
+#     BECAUSE OF IT'S CLIENT-SIDED)
+# ! Don't forget to change the on-hover-text message after changing this setting
+on-click-action: COPY_TO_CLIPBOARD

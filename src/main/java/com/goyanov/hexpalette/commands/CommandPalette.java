@@ -1,15 +1,14 @@
 package com.goyanov.hexpalette.commands;
 
+import com.google.errorprone.annotations.Var;
+import com.goyanov.hexpalette.utils.Variables;
+import com.goyanov.rglib.RGAPI;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.*;
-import net.md_5.bungee.api.chat.hover.content.Item;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 public class CommandPalette implements CommandExecutor
 {
@@ -40,10 +39,10 @@ public class CommandPalette implements CommandExecutor
                         int newB = b + i;
                         if (newB > 255) newB = 255;
                         String hex = String.format("#%02x%02x%02x", newR, newG, newB);
-                        TextComponent extra = new TextComponent("§l|");
+                        TextComponent extra = new TextComponent(RGAPI.getColoredMessage(Variables.getColorSymbol()));
                         extra.setColor(ChatColor.of(hex));
-                        extra.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Click to copy").create()));
-                        extra.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, hex));
+                        extra.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(RGAPI.formatWithColors(Variables.getHoverText())).create()));
+                        extra.setClickEvent(new ClickEvent(Variables.getClickEvent(), hex));
                         message.addExtra(extra);
                     }
                 }
